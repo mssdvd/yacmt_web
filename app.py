@@ -20,11 +20,12 @@ app.layout = html.Div([
     html.H4('Records'),
     dt.DataTable(
         rows=DATA.to_dict('records'),
-        columns=["id", "veicolo"],
         filterable=True,
         sortable=True,
         selected_row_indices=[])
 ])
-
+app.css.append_css({
+    'external_url': 'https://codepen.io/chriddyp/pen/bWLwgP.css'
+})
 if __name__ == '__main__':
     app.run_server(debug=True)
