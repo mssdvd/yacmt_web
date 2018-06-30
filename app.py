@@ -19,6 +19,7 @@ engine = create_engine(os.getenv("DATABASE_URL"))
 DATA = pandas.read_sql("SELECT * FROM reports", engine)
 
 app.layout = html.Div([
+    html.H1('YACMT'),
     html.H4('Records'),
     dt.DataTable(
         rows=DATA.to_dict('records'),
