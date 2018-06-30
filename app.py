@@ -77,4 +77,4 @@ app.css.append_css({
     'external_url': 'https://codepen.io/chriddyp/pen/bWLwgP.css'
 })
 if __name__ == '__main__':
-    app.run()
+    app.run_server(debug=True)
