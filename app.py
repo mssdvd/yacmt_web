@@ -72,6 +72,7 @@ def update_time_graph(yaxis_column_value):
     }
 
 
+app.title = "YACMT"
 app.css.append_css({
     'external_url': 'https://codepen.io/chriddyp/pen/bWLwgP.css'
 })
