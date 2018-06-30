@@ -68,7 +68,7 @@ def update_time_graph(yaxis_column_value):
                 't': 10,
                 'r': 0
             },
-            hovermode='closest')
+        )
     }
 
 
