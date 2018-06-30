@@ -13,6 +13,8 @@ pandas = "*"
 dash-table-experiments = "*"
 sqlalchemy = "*"
 "psycopg2" = "*"
+gunicorn = "*"
+dash-auth = "*"
 
 [dev-packages]
 "flake8" = "*"

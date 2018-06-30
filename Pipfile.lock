@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "29cb54165cad0803c3e08e81286e507d9ee8a8fbc62c04b3aa2122c096e58b79"
+            "sha256": "15eaa1701fa4f34b94275dc5a375a5fea1164383ba3346333594415e43127afc"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -43,6 +43,13 @@
             ],
             "index": "pypi",
             "version": "==0.21.1"
+        },
+        "dash-auth": {
+            "hashes": [
+                "sha256:295130eac0c75d803566782b670865f712cae52d80591efea08de058bb205749"
+            ],
+            "index": "pypi",
+            "version": "==1.0.2"
         },
         "dash-core-components": {
             "hashes": [
@@ -91,6 +98,20 @@
                 "sha256:468693f4ddd11ac6a41bca4eb5f94b071b763256d54136f77957cfee635badb3"
             ],
             "version": "==1.4.0"
+        },
+        "flask-seasurf": {
+            "hashes": [
+                "sha256:c57918c17e9afd988bdc30d8dcb7bfb833741dee38b06c1bbd17821d6fa2b6cf"
+            ],
+            "version": "==0.2.2"
+        },
+        "gunicorn": {
+            "hashes": [
+                "sha256:7ef2b828b335ed58e3b64ffa84caceb0a7dd7c5ca12f217241350dec36a1d5dc",
+                "sha256:bc59005979efb6d2dd7d5ba72d99f8a8422862ad17ff3a16e900684630dd2a10"
+            ],
+            "index": "pypi",
+            "version": "==19.8.1"
         },
         "idna": {
             "hashes": [
@@ -260,6 +281,12 @@
                 "sha256:ec22d826a36ed72a7358ff3fe56cbd4ba69dd7a6718ffd450ff0e9df7a47ce6a"
             ],
             "version": "==2.19.1"
+        },
+        "retrying": {
+            "hashes": [
+                "sha256:08c039560a6da2fe4f2c426d0766e284d3b736e355f8dd24b37367b0bb41973b"
+            ],
+            "version": "==1.3.3"
         },
         "six": {
             "hashes": [

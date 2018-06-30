@@ -1,18 +1,20 @@
-import json
+import os
 
 import dash
+import dash_auth
 import dash_core_components as dcc
 import dash_html_components as html
 import dash_table_experiments as dt
 import pandas
-from dash.dependencies import Input, Output, State
+from dash.dependencies import Input, Output
 from plotly import graph_objs as go
 from sqlalchemy import create_engine
 
 app = dash.Dash()
-engine = create_engine(
-    "***REMOVED***"
-)
+server = app.server
+VALID_USER_PASS = [[os.getenv("USER"), os.getenv("PASS")]]
+auth = dash_auth.BasicAuth(app, VALID_USER_PASS)
+engine = create_engine(os.getenv("DATABASE_URL"))
 
 DATA = pandas.read_sql("SELECT * FROM reports", engine)
 
@@ -43,8 +45,8 @@ app.layout = html.Div([
 
 
 @app.callback(
-    dash.dependencies.Output("time-graph", "figure"), [
-        dash.dependencies.Input("yaxis-column", "value"),
+    Output("time-graph", "figure"), [
+        Input("yaxis-column", "value"),
     ])
 def update_time_graph(yaxis_column_value):
     return {
@@ -73,4 +75,4 @@ app.css.append_css({
     'external_url': 'https://codepen.io/chriddyp/pen/bWLwgP.css'
 })
 if __name__ == '__main__':
-    app.run_server(debug=True)
+    app.run()
