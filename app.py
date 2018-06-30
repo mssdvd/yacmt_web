@@ -20,14 +20,6 @@ DATA = pandas.read_sql("SELECT * FROM reports", engine)
 
 app.layout = html.Div([
     html.H1('YACMT'),
-    html.H4('Records'),
-    dt.DataTable(
-        rows=DATA.to_dict('records'),
-        filterable=True,
-        sortable=True,
-        selected_row_indices=[]),
-    html.H5("Velocità max: " + str(DATA["speed"].max())),
-    html.H5("Velocità media: " + str(round(DATA["speed"].mean(), 2))),
     dcc.Dropdown(
         id='yaxis-column',
         options=[{
@@ -41,7 +33,15 @@ app.layout = html.Div([
             'value': 'eng_rpm'
         }],
         value="eng_load"),
-    dcc.Graph(id="time-graph")
+    dcc.Graph(id="time-graph"),
+    html.H5("Velocità max: " + str(DATA["speed"].max())),
+    html.H5("Velocità media: " + str(round(DATA["speed"].mean(), 2))),
+    html.H4('Records'),
+    dt.DataTable(
+        rows=DATA.to_dict('records'),
+        filterable=True,
+        sortable=True,
+        selected_row_indices=[]),
 ])
 
 
